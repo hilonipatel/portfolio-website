@@ -1,0 +1,96 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #242424;
+  background: #faf9f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  line-height: 1.1;
+}
+
+p {
+  line-height: 1.8;
+  color: #666;
+}
+
+a {
+  color: inherit;
+}
+
+.page-container {
+  width: min(1100px, 88%);
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.eyebrow {
+  color: #6c63ff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.content-card,
+.project-card {
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #eceae5;
+  border-radius: 16px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.primary-button {
+  color: #fff;
+  background: #6c63ff;
+}
+
+.secondary-button {
+  color: #242424;
+  border: 1px solid #ddd;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
