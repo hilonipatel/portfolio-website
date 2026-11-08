@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <NavLink to="/" className="nav-logo" end>
-        hiloni
+        Hiloni's Portfolio
       </NavLink>
 
       <div className="nav-links">

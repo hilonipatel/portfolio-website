@@ -1,10 +1,11 @@
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 const interests = [
-  "Software Engineering",
-  "Full-Stack Development",
-  "Backend Development",
-  "Database Systems",
+  { label: "Software Engineering", href: "/projects",},
+  { label: "Full-Stack Development", href: "/skills",},
+  {label: "Backend Development", href: "/projects",},
+  {label: "Database Systems", href: "/about",},
 ];
 
 function Home() {
@@ -39,14 +40,17 @@ function Home() {
           </h1>
 
           <h2 className="home-subtitle">
-            Computer Science student at Rutgers University
+            Aspiring Software Engineer focused on Full-Stack Development and Backend Systems
           </h2>
 
           <p className="home-lead">
-            I’m graduating in January 2027, with a focus on software
-            engineering, full-stack development, and backend systems.
-            I enjoy turning ideas into functional applications and
-            understanding the systems that make them work.
+            I’m a Computer Science student at Rutgers University,
+            graduating in January 2027. I’m interested in software
+            engineering roles where I can contribute to building
+            reliable, scalable applications, particularly in
+            full-stack and backend development. I enjoy turning
+            ideas into functional applications and understanding
+            the systems that make them work.
           </p>
 
           <p className="home-description">
@@ -55,6 +59,18 @@ function Home() {
             I’m continuing to strengthen my foundation in data
             structures, algorithms, and object-oriented programming
             while exploring how to build reliable, thoughtful software.
+          </p>
+
+          <p className="home-description">
+            This portfolio is a collection of my technical
+            experiences, projects, and growth as a computer
+            science student. It highlights the skills I’ve
+            developed through coursework and hands-on projects,
+            from designing applications and working with
+            databases to exploring software architecture.
+            I invite you to explore my work, learn more about
+            my background, and see how I’m continuing to grow
+            as a software engineer.
           </p>
 
           <div className="home-divider" />
@@ -66,9 +82,15 @@ function Home() {
 
             <ul className="interest-list">
               {interests.map((interest) => (
-                <li key={interest}>{interest}</li>
+                <li key={interest.label}>
+                  <Link to={interest.href}>
+                    {interest.label}
+                    <span aria-hidden="true"> ↗</span>
+                  </Link>
+                </li>
               ))}
             </ul>
+
           </section>
 
           <div className="home-divider" />
@@ -78,11 +100,37 @@ function Home() {
               WHAT'S NEXT
             </p>
             <p>
-              I’m seeking software engineering internship opportunities
-              where I can contribute to real-world products, learn from
-              experienced engineers, and grow through meaningful work.
+              I’m seeking software engineering internship opportunities where I can contribute to real-world
+              products, learn from experienced engineers, and grow through meaningful work. I’m especially
+              interested in collaborative teams working on full-stack applications and backend systems.
             </p>
           </section>
+
+          <div className="home-explore">
+          <p className="section-label">EXPLORE MY PORTFOLIO</p>
+
+          <div className="explore-links">
+            <Link to="/skills">
+              Skills & Resume <span aria-hidden="true">↗</span>
+            </Link>
+
+            <Link to="/about">
+              About & Coursework <span aria-hidden="true">↗</span>
+            </Link>
+
+            <Link to="/projects">
+              Projects <span aria-hidden="true">↗</span>
+            </Link>
+
+            <Link to="/multimedia">
+              Multimedia & Interests <span aria-hidden="true">↗</span>
+            </Link>
+
+            <Link to="/reflection">
+              Reflection & Contact <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+        </div>
 
           <p className="home-signoff">
             Curious by nature. Building with purpose.
