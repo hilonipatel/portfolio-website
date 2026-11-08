@@ -14,6 +14,40 @@ function Reflection() {
       </section>
 
       <section
+        className="reflection-audio-section"
+        aria-labelledby="reflection-audio-title"
+      >
+        <div className="reflection-audio-heading">
+          <p className="reflection-eyebrow">A PERSONAL REFLECTION</p>
+
+          <h2 id="reflection-audio-title">
+            What I've learned and where I'm going.
+          </h2>
+
+          <p>
+            In this audio reflection, I share how my coursework and project experiences have shaped my growth as a developer.
+            I discuss lessons from FlightSystem, overcoming challenges with version control, and my goals for a future in backend software engineering.
+          </p>
+        </div>
+
+        <audio
+          className="reflection-audio-player"
+          controls
+          preload="metadata"
+        >
+          <source
+            src={`${import.meta.env.BASE_URL}assets/Reflection.m4a`}
+            type="audio/mp4"
+          />
+          Your browser does not support the audio player.
+        </audio>
+
+        <p className="reflection-audio-caption">
+          Audio recorded by me for this portfolio.
+        </p>
+      </section>
+
+      <section
         className="reflection-content"
         aria-label="Personal reflection"
       >
