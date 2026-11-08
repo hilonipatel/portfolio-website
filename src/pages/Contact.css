@@ -1,138 +1,217 @@
 .contact-page {
-    --page-bg: #f8f8f5;
-    --ink: #252721;
-    --muted: #696b63;
-    --accent: #68735b;
-    --line: #dedfd7;
-  
-    min-height: calc(100vh - 75px);
-    padding: clamp(42px, 5vw, 76px) clamp(24px, 5vw, 80px);
-    background: var(--page-bg);
-    color: var(--ink);
+  --page-bg: #f8f8f5;
+  --ink: #252721;
+  --muted: #696b63;
+  --accent: #68735b;
+  --line: #dedfd7;
+  --surface: #ffffff;
+  min-height: calc(100vh - 75px);
+  padding: clamp(42px, 5vw, 76px) clamp(24px, 5vw, 80px);
+  background: var(--page-bg);
+  color: var(--ink);
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: clamp(30px, 7vw, 100px);
+}
+
+.contact-eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+}
+
+.contact-title {
+  margin: 22px 0 24px;
+  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+  overflow-wrap: anywhere;
+}
+
+.contact-title span,
+.feedback-title span {
+  color: var(--accent);
+}
+
+.contact-intro {
+  max-width: 650px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  line-height: 1.85;
+}
+
+/* Social links */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 130px;
+  padding: 13px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-button-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.contact-button-secondary {
+  background: transparent;
+  color: var(--accent);
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+}
+
+.contact-button-primary:hover {
+  background: #535d49;
+}
+
+.contact-button-secondary:hover {
+  background: rgba(104, 115, 91, 0.1);
+}
+
+.contact-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Feedback form section */
+.contact-feedback-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: clamp(70px, 10vw, 130px) auto 0;
+  padding-top: clamp(35px, 5vw, 60px);
+  border-top: 1px solid var(--line);
+}
+
+.feedback-heading {
+  max-width: 700px;
+  margin-bottom: 32px;
+}
+
+.feedback-title {
+  margin: 16px 0;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.055em;
+}
+
+.feedback-description {
+  max-width: 650px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Embedded Google Form */
+.google-form-container {
+  overflow: hidden;
+  width: 100%;
+  min-height: 700px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 8px 28px rgba(37, 39, 33, 0.04);
+}
+
+.google-form {
+  display: block;
+  width: 100%;
+  height: 900px;
+  border: 0;
+  background: var(--surface);
+}
+
+.feedback-note {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .contact-page {
+    padding: 32px 6% 48px;
   }
-  
+
   .contact-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-top: clamp(30px, 7vw, 100px);
+    padding-top: 45px;
   }
-  
-  .contact-eyebrow {
-    margin: 0;
-    color: var(--accent);
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    line-height: 1.6;
-  }
-  
+
   .contact-title {
-    margin: 22px 0 24px;
-    font-size: clamp(3.2rem, 7vw, 6.5rem);
-    font-weight: 600;
-    line-height: 1.04;
-    letter-spacing: -0.065em;
-    overflow-wrap: anywhere;
+    margin-top: 18px;
+    font-size: clamp(2.8rem, 10vw, 4.2rem);
   }
-  
-  .contact-title span {
-    color: var(--accent);
-  }
-  
-  .contact-intro {
-    max-width: 650px;
-    margin: 0;
-    color: var(--muted);
-    font-size: clamp(1rem, 1.3vw, 1.12rem);
-    line-height: 1.85;
-  }
-  
+
   .contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 36px;
-  }
-  
-  .contact-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     gap: 10px;
-    min-width: 130px;
-    padding: 13px 20px;
-    border: 1px solid var(--accent);
-    border-radius: 3px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease,
-      transform 0.2s ease;
+    margin-top: 28px;
   }
-  
-  .contact-button-primary {
-    background: var(--accent);
-    color: #fff;
+
+  .contact-button {
+    min-width: 115px;
+    padding: 12px 16px;
   }
-  
-  .contact-button-secondary {
-    background: transparent;
-    color: var(--accent);
+
+  .contact-feedback-section {
+    margin-top: 65px;
+    padding-top: 35px;
   }
-  
+
+  .feedback-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .google-form-container {
+    min-height: 750px;
+  }
+
+  .google-form {
+    height: 850px;
+  }
+}
+
+/* Respect visitors' reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .contact-button {
+    transition: none;
+  }
+
   .contact-button:hover {
-    transform: translateY(-2px);
+    transform: none;
   }
-  
-  .contact-button-primary:hover {
-    background: #535d49;
-  }
-  
-  .contact-button-secondary:hover {
-    background: rgba(104, 115, 91, 0.1);
-  }
-  
-  .contact-button:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 4px;
-  }
-  
-  /* Mobile */
-  
-  @media (max-width: 700px) {
-    .contact-page {
-      padding: 32px 6% 48px;
-    }
-  
-    .contact-container {
-      padding-top: 45px;
-    }
-  
-    .contact-title {
-      margin-top: 18px;
-      font-size: clamp(2.8rem, 10vw, 4.2rem);
-    }
-  
-    .contact-links {
-      gap: 10px;
-      margin-top: 28px;
-    }
-  
-    .contact-button {
-      min-width: 115px;
-      padding: 12px 16px;
-    }
-  }
-  
-  @media (prefers-reduced-motion: reduce) {
-    .contact-button {
-      transition: none;
-    }
-  
-    .contact-button:hover {
-      transform: none;
-    }
-  }
+}
+
+.feedback-title span {
+  white-space: nowrap;
+}
