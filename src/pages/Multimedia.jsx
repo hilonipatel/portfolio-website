@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Multimedia.css";
 
 
@@ -7,22 +6,22 @@ const galleryImages = [
   {
     src: "assets/code.png",
     alt: "Code preview showing implementation details from a software project",
-    caption: "Code preview — implementation and project structure",
+    caption: "Code & Implementation — A look at the code and project structure behind my software development work.",
   },
   {
     src: "assets/pagePreview.png",
     alt: "Android Studio XML layout preview showing items currently in the RU Cafe shopping cart",
-    caption: "RU Cafe — XML cart layout preview in Android Studio",
+    caption:  "RU Cafe — The XML layout used to display items in the user's shopping cart.",
   },
   {
     src: "assets/ruDonut.png",
     alt: "RU Cafe Android application main page preview in Android Studio",
-    caption: "RU Cafe — Android application main page",
+    caption: "RU Cafe — The main interface of my Android application.",
   },
   {
     src: "assets/vehiclemgmt.png",
     alt: "Completed Vehicle Management System frontend designed with SceneBuilder",
-    caption: "Vehicle Management System — JavaFX frontend",
+    caption: "Vehicle Management System — The JavaFX frontend designed to manage vehicle information.",
   },
 ];
 
@@ -49,6 +48,14 @@ function Multimedia() {
   function showNext() {
     setActiveImage((activeImage + 1) % galleryImages.length);
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImage((current) => (current + 1) % galleryImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <main className="multimedia-page">
@@ -80,11 +87,23 @@ function Multimedia() {
           <h2>FlightSystem — Demo Walkthrough</h2>
 
           <p>
-            This walkthrough demonstrates my FlightSystem travel
-            reservation application, including its flight search
-            and reservation workflows. It offers a visual overview
-            of the application built with Java Servlets, JDBC,
-            and MySQL.
+
+          <p>
+            The screencast was created as part of the project's course requirements. It demonstrates FlightSystem from the perspectives
+            of customers, customer representatives, and administrators. It walks through the customer experience, including creating
+            an account, managing a profile, searching and booking flights, viewing past tickets, and submitting questions to customer representatives.
+            <br /><br />
+            The customer representative walkthrough shows how representatives manage users, book and edit tickets, respond to inquiries, and manage aircraft, airports, 
+            and flights. It also demonstrates how representatives can view passenger waitlists and flight arrival and departure information for individual airports.
+            <br /><br />
+            The administrator walkthrough highlights account management and database functionality, including adding and removing customer representatives, 
+            generating sales reports, viewing reservations by flight number, reviewing revenue summaries, and identifying the five most active flights. The demo also
+            shows how application actions are reflected in the underlying SQL database.
+            <br /><br />
+            We created this screencast to provide a more complete visual explanation of the project than screenshots alone could offer.
+            It demonstrates how the different user roles, application features, and database operations work together.
+          </p>
+
           </p>
 
           <a
@@ -108,10 +127,9 @@ function Multimedia() {
           <h2>Projects & Development</h2>
 
           <p>
-            A collection of application screenshots and development
-            visuals from my projects. Explore the interfaces I built,
-            the code behind them, and different parts of the
-            development process.
+          This gallery highlights different parts of my software development work, from code and application layouts to completed user
+          interfaces. The images show how I move between implementation details and the user experience, including projects built with
+          Java, JavaFX, and Android tools.
           </p>
 
           <p className="media-caption">
@@ -216,12 +234,14 @@ function Multimedia() {
 
       <section className="interests-section">
         <div className="interests-intro">
-          <p className="multimedia-eyebrow">
-            04 / OUTSIDE OF CODE
-          </p>
+          <p className="multimedia-eyebrow"> 04 / OUTSIDE OF CODE </p>
           <h2>
             A little beyond <span>code.</span>
           </h2>
+          <p className="interests-intro-text">
+            Outside of technology, I enjoy reading, watching mystery and drama series, and staying connected
+            to languages and culture. These interests give me a different way to explore stories, people, and perspectives.
+          </p>
         </div>
 
         <div className="interests-grid">
@@ -230,7 +250,7 @@ function Multimedia() {
             <p className="interest-number">01</p>
             <h3>Languages I Speak</h3>
             <p className="interest-description">
-              Languages that connect me to different people.
+              Languages that connect me to different people and experiences.
             </p>
 
             <div className="language-list">
@@ -255,6 +275,11 @@ function Multimedia() {
                 </span>
               </div>
             </div>
+            <p className="interest-personal">
+              Language is an important part of how I connect with people and my cultural background. Gujarati and Hindi
+              help me stay connected to my culture, while English has been an important part of my education and
+              everyday life. I appreciate how knowing multiple languages can create connections across different experiences and communities.
+            </p>
           </article>
 
           {/* Books */}
@@ -262,7 +287,7 @@ function Multimedia() {
             <p className="interest-number">02</p>
             <h3>Books I Recommend</h3>
             <p className="interest-description">
-              Stories worth adding to your reading list.
+              Stories that stayed with me for their themes, characters, and storytelling.
             </p>
 
             <ul className="recommendation-list">
@@ -273,6 +298,11 @@ function Multimedia() {
                 <span className="recommendation-author">
                   Khaled Hosseini
                 </span>
+                <p className="recommendation-description">
+                I first read this book as an assigned book in my English class, but its story stayed with me beyond
+                the classroom. I enjoyed how it explored powerful themes of guilt, betrayal, and the possibility of
+                redemption. It made me think about how past choices can shape a person's life and relationships.
+              </p>
               </li>
 
               <li>
@@ -282,6 +312,11 @@ function Multimedia() {
                 <span className="recommendation-author">
                   Catherine Cowles
                 </span>
+                <p className="recommendation-description">
+                  This small-town romantic suspense novel stood out to me because of its high-stakes mystery and
+                  unexpected twists. I enjoyed how the suspense kept the story engaging while the romance added
+                  another layer to the characters and their relationships.
+                </p>
               </li>
 
               <li>
@@ -291,6 +326,11 @@ function Multimedia() {
                 <span className="recommendation-author">
                   Devney Perry
                 </span>
+                <p className="recommendation-description">
+                  I enjoyed this small-town romance for its family dynamics. The themes of healing and the main
+                  female character's journey as she raises her newborn baby were particularly heartwarming.
+                  I liked how the story balanced romance with personal growth and family connections.
+                </p>
               </li>
             </ul>
           </article>
@@ -300,7 +340,7 @@ function Multimedia() {
             <p className="interest-number">03</p>
             <h3>Series I Recommend</h3>
             <p className="interest-description">
-              Series to add to your watchlist.
+            Mystery, emotional storytelling, and true-crime investigations that kept me interested.
             </p>
 
             <ul className="recommendation-list">
@@ -311,6 +351,11 @@ function Multimedia() {
                 <span className="recommendation-author">
                   2026
                 </span>
+                <p className="recommendation-description">
+                  I recently watched this series and really enjoyed the way the mystery was revealed early in the
+                  story. Instead of focusing only on discovering what happened, the story explored the
+                  psychological impact of the pursuit. That approach made it especially interesting to me.
+                </p>
               </li>
 
               <li>
@@ -320,6 +365,11 @@ function Multimedia() {
                 <span className="recommendation-author">
                   2023
                 </span>
+                <p className="recommendation-description">
+                  This emotional series explores grief, resilience, and learning to move forward after loss. I found
+                  myself relating to the main character and his struggle to accept what happened. I appreciated
+                  how the story explored the different ways people cope with grief.
+                </p>
               </li>
 
               <li>
@@ -327,8 +377,13 @@ function Multimedia() {
                   Manhunt: The Night Stalker
                 </span>
                 <span className="recommendation-author">
-                  2026
+                  2021
                 </span>
+                <p className="recommendation-description">
+                  I enjoyed this series because it is based on a true story and focuses on the investigation
+                  behind catching the perpetrator. I found the investigative process compelling, especially
+                  seeing how the case developed and how the people involved worked to bring it to a conclusion.
+                </p>
               </li>
             </ul>
           </article>
