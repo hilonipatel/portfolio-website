@@ -8,6 +8,7 @@ import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Multimedia from "./pages/Multimedia";
 import Reflection from "./pages/Reflection";
+import Contact from "./pages/Contact";
 
 import "./index.css";
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/multimedia" element={<Multimedia />} />
           <Route path="/reflection" element={<Reflection />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
     </HashRouter>

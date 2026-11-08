@@ -7,7 +7,8 @@ const links = [
   { label: "Projects", path: "/projects" },
   { label: "Skills & Resume", path: "/skills" },
   { label: "Multimedia & Interests", path: "/multimedia" },
-  { label: "Reflection & Contact", path: "/reflection" },
+  { label: "Reflection", path: "/reflection" },
+  { label: "Contact", path: "/contact" },
 ];
 
 function Navbar() {

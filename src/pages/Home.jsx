@@ -2,8 +2,8 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 
 const interests = [
-  { label: "Software Engineering", href: "/projects",},
-  { label: "Full-Stack Development", href: "/skills",},
+  {label: "Software Engineering", href: "/projects",},
+  {label: "Full-Stack Development", href: "/skills",},
   {label: "Backend Development", href: "/projects",},
   {label: "Database Systems", href: "/about",},
 ];
@@ -127,8 +127,13 @@ function Home() {
             </Link>
 
             <Link to="/reflection">
-              Reflection & Contact <span aria-hidden="true">↗</span>
+              Reflection <span aria-hidden="true">↗</span>
             </Link>
+
+            <Link to="/contact">
+              Contact <span aria-hidden="true">↗</span>
+            </Link>
+
           </div>
         </div>
 
