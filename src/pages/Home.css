@@ -327,3 +327,35 @@
   margin-bottom: 1.5rem;
   line-height: 1.7;
 }
+
+.home-audio-section {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.home-audio-section h3 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.home-audio-section > p:not(.section-label):not(.home-audio-caption) {
+  margin: 0.75rem 0 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.home-audio-player {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.home-audio-caption {
+  margin: 0.6rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}

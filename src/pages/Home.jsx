@@ -43,6 +43,37 @@ function Home() {
             Aspiring Software Engineer focused on Full-Stack Development and Backend Systems
           </h2>
 
+          <section
+            className="home-audio-section"
+            aria-labelledby="home-audio-title"
+          >
+            <p className="section-label">A QUICK INTRODUCTION</p>
+
+            <h3 id="home-audio-title">
+              A little welcome.
+            </h3>
+
+            <p>
+              Take a moment to listen to a short introduction to my portfolio and what you can explore throughout the website.
+            </p>
+
+            <audio
+              className="home-audio-player"
+              controls
+              preload="metadata"
+            >
+              <source
+                src={`${import.meta.env.BASE_URL}assets/home-intro.m4a`}
+                type="audio/mp4"
+              />
+              Your browser does not support the audio player.
+            </audio>
+
+            <p className="home-audio-caption">
+              A brief introduction recorded by me.
+            </p>
+          </section>
+
           <p className="home-lead">
             I’m a Computer Science student at Rutgers University,
             graduating in January 2027. I’m interested in software
