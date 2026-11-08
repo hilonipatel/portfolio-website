@@ -6,6 +6,8 @@ const projects = [
     number: "01",
     name: "TaskForge",
     subtitle: "SaaS Project Management Platform",
+    projectType: "Independent Project",
+    date: "2026",
     image: `${import.meta.env.BASE_URL}assets/taskforge.png`,
     summary:
       "A multi-tenant project management platform for organizing teams, projects, and task workflows while keeping each organization's data and permissions separate.",
@@ -29,7 +31,8 @@ const projects = [
     learning:
       "This project strengthened my understanding of full-stack architecture and how authentication, authorization, database design, and frontend behavior need to work together.",
     visual: "taskforge-visual",
-    visualLabel: "TaskForge project interface illustration",
+    visualLabel: "TaskForge organization management page",
+    visualCaption: "The TaskForge organization page allows users to select an organization, view its members, and add or remove members based on their assigned roles. This screenshot highlights the platform's organization management and role-based access features.",
     repo: "https://github.com/hilonipatel/TaskForge.git",
   },
   {
@@ -37,6 +40,8 @@ const projects = [
     number: "02",
     name: "RETRACE",
     subtitle: "Incident Replay & Debugging Platform",
+    projectType: "Independent Project",
+    date: "2026",
     image: `${import.meta.env.BASE_URL}assets/retrace.png`,
     summary:
       "A debugging platform that replays recorded HTTP requests, checks actual responses against expected behavior, and helps developers investigate failures and regressions.",
@@ -59,8 +64,9 @@ const projects = [
       "Replay results need to be useful at the individual request level, not just as one overall success or failure. I built the workflow to preserve request order, capture each response, and expose differences between expected and actual results.",
     learning:
       "RETRACE gave me hands-on experience with API behavior, automated testing, structured debugging, and turning backend execution results into information developers can act on.",
-    visual: "retrace-visual",
-    visualLabel: "RETRACE request replay and test results illustration",
+    visual: "RETRACE incident dashboard",
+    visualCaption:
+      "The RETRACE home page displays the total number of incidents, open and resolved incident counts, and an incident records queue. This view gives developers an overview of incident activity and provides a starting point for investigating recorded issues.",    
     repo: "https://github.com/hilonipatel/incident-replay-platform.git",
   },
   {
@@ -68,6 +74,8 @@ const projects = [
     number: "03",
     name: "FlightSystem",
     subtitle: "Online Travel Reservation System",
+    projectType: "Academic Project · 01:198:336",
+    date: "Spring 2025",
     image: `${import.meta.env.BASE_URL}assets/flightsystem.png`,
     summary:
       "A web-based reservation system that supports flight search and booking alongside customer, representative, and administrator workflows.",
@@ -90,12 +98,14 @@ const projects = [
     learning:
       "This project helped me connect server-side Java programming with database operations and understand how a relational data model supports a larger, multi-role web application.",
     visual: "flightsystem-visual",
-    visualLabel: "FlightSystem flight search and reservation illustration",
+    visualLabel: "FlightSystem flight search and booking results",
+    visualCaption:
+      "FlightSystem allows customers to filter and sort flight options by minimum and maximum price, outbound and return airlines, and outbound and return takeoff and landing times. Customers can compare available round-trip flights and select an option to book their itinerary.",
     repo: "https://github.com/crrlyly/FlightSystem.git",
   },
 ];
 
-function ProjectVisual({ src, label }) {
+function ProjectVisual({ src, label, caption }) {
   return (
     <figure className="project-visual">
       <img
@@ -104,8 +114,9 @@ function ProjectVisual({ src, label }) {
         alt={label}
         loading="lazy"
       />
+
       <figcaption className="visual-caption">
-        Project interface
+        {caption}
       </figcaption>
     </figure>
   );
@@ -125,13 +136,23 @@ function Projects() {
             <article className="project-card" id={project.id} key={project.id}>
               <ProjectVisual
                 src={project.image}
-                label={`${project.name} application screenshot`}
+                label={project.visualLabel}
+                caption={project.visualCaption}
               />
 
               <div className="project-details">
-                <div className="project-number">{project.number} / SELECTED PROJECT</div>
+                <div className="project-number">
+                  {project.number} / SELECTED PROJECT
+                </div>
+
+                <div className="project-meta">
+                  <span className="project-type">{project.projectType}</span>
+                  <span className="project-date">{project.date}</span>
+                </div>
+
                 <h2>{project.name}</h2>
                 <h3>{project.subtitle}</h3>
+
                 <p className="project-summary">{project.summary}</p>
 
                 <div className="project-tech-section">
@@ -159,7 +180,7 @@ function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    View on GitHub <span aria-hidden="true">↗</span>
+                    Explore the source code on GitHub <span aria-hidden="true">↗</span>
                   </a>
                 ) : (
                   <p className="project-repo-pending">
