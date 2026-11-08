@@ -1,4 +1,3 @@
-
 import "./Skills.css";
 
 const skillGroups = [
@@ -243,6 +242,48 @@ function Skills() {
           >
             View GitHub Profile <span aria-hidden="true">↗</span>
           </a>
+        </div>
+      </section>
+
+      <section
+        className="skills-video-section"
+        aria-labelledby="backend-video-title"
+      >
+        <div className="section-heading">
+          <p className="skills-eyebrow">BACKEND DEVELOPMENT</p>
+
+          <h2 id="backend-video-title">
+            Understanding how web servers work.
+          </h2>
+
+          <p>
+            This video explains how web servers process HTTP requests, serve static and dynamic content, and support web applications
+            and APIs. It also demonstrates different server implementations, including Apache and Node.js.
+          </p>
+        </div>
+
+        <div className="skills-video-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/JhpUch6lWMw"
+            title="How Web Servers Work: HTTP, Apache, and Node.js"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+
+        <div className="skills-video-reflection">
+          <p className="skills-eyebrow">WHY I CHOSE THIS VIDEO</p>
+
+          <p>
+            I chose this video because understanding how web servers communicate with clients is an important part of becoming
+            a backend software engineer. Through projects such as FlightSystem, where I worked with Java Servlets, JDBC, and
+            Apache Tomcat, I became interested in how requests are received, processed, and connected to application functionality.
+            This video expands on those concepts by explaining HTTP communication and comparing different server implementations.
+            It also connects to my interest in building reliable backend systems and developing a stronger understanding of how
+            applications operate beyond the user interface.
+          </p>
         </div>
       </section>
 
