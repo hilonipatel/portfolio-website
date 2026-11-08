@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./About.css";
 
 const semesters = [
@@ -99,7 +100,42 @@ const featuredCourses = [
   },
   ];
 
+const galleryImages = [
+  {
+    src: "assets/circuit.png",
+    alt: "Circuit design of a simple processor",
+    title: "Simple Processor — Circuit Design",
+    caption:
+      "This circuit represents a simple processor I designed to perform arithmetic and logical operations based on instructions stored in RAM. It highlights my experience with computer architecture and how hardware components work together to execute instructions.",
+  },
+  {
+    src: "assets/junit.png",
+    alt: "JUnit test cases in code with terminal output showing all tests passed",
+    title: "JUnit Testing — Software Methodology",
+    caption:
+      "This image shows JUnit test cases alongside terminal output confirming that all tests passed. Testing helped me verify application behavior, identify issues, and understand the importance of writing reliable and maintainable software.",
+  },
+  {
+    src: "assets/reservationList.png",
+    alt: "Vehicle Management System reservation reporting feature",
+    title: "Vehicle Management System — Reservation Reporting",
+    caption:
+      "This screenshot shows the reservation reporting feature of my Vehicle Management System. Users can print a list of reservations organized by location, license plate, or beginning date. This feature demonstrates how software can organize information into useful reports for users.",
+  },
+];
+
 function About() {
+  const [activeImage, setActiveImage] = useState(0);
+  const base = import.meta.env.BASE_URL;
+  const currentImage = galleryImages[activeImage];
+  function showPrevious() {
+    setActiveImage(
+      (activeImage - 1 + galleryImages.length) % galleryImages.length
+    );
+  }
+  function showNext() {
+    setActiveImage((activeImage + 1) % galleryImages.length);
+  }
   return (
     <main className="about-page">
       <div className="about-container">
@@ -210,6 +246,91 @@ function About() {
               </div>
 
             </article>
+          </section>
+
+          <section
+            className="about-gallery-section"
+            aria-labelledby="about-gallery-heading"
+          >
+            <header className="about-section-heading">
+              <div>
+                <p className="about-eyebrow">
+                  COURSEWORK & DEVELOPMENT
+                </p>
+
+                <h2 id="about-gallery-heading">
+                  Learning through building.
+                </h2>
+              </div>
+
+              <p className="about-gallery-intro">
+                A few examples of the technical work and applications I explored throughout my computer science coursework.
+                Each image highlights a different area of learning, from computer architecture and software testing to application development.
+              </p>
+            </header>
+
+            <div className="about-gallery">
+              <div className="about-gallery-image-wrap">
+                <img
+                  key={currentImage.src}
+                  className="about-gallery-image"
+                  src={`${base}${currentImage.src}`}
+                  alt={currentImage.alt}
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="about-gallery-content">
+                <p className="about-eyebrow">
+                  IMAGE {String(activeImage + 1).padStart(2, "0")} /{" "}
+                  {String(galleryImages.length).padStart(2, "0")}
+                </p>
+
+                <h3>{currentImage.title}</h3>
+
+                <p className="about-gallery-caption">
+                  {currentImage.caption}
+                </p>
+              </div>
+
+              <div className="about-gallery-controls">
+                <button
+                  type="button"
+                  className="about-gallery-arrow"
+                  onClick={showPrevious}
+                  aria-label="Show previous image"
+                >
+                  ←
+                </button>
+
+                <div
+                  className="about-gallery-dots"
+                  aria-label="Choose gallery image"
+                >
+                  {galleryImages.map((image, index) => (
+                    <button
+                      key={image.src}
+                      type="button"
+                      className={`about-gallery-dot ${
+                        activeImage === index ? "active" : ""
+                      }`}
+                      onClick={() => setActiveImage(index)}
+                      aria-label={`Show image ${index + 1}: ${image.title}`}
+                      aria-pressed={activeImage === index}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  className="about-gallery-arrow"
+                  onClick={showNext}
+                  aria-label="Show next image"
+                >
+                  →
+                </button>
+              </div>
+            </div>
           </section>
   
           <section
