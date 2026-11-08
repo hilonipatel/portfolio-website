@@ -242,3 +242,99 @@
     transition: none;
   }
 }
+
+.skills-objective {
+  max-width: 760px;
+  line-height: 1.8;
+  margin-top: 1.5rem;
+}
+
+.skills-projects,
+.skills-growth {
+  margin-top: 5rem;
+}
+
+.project-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-highlight {
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.project-highlight-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.project-highlight-heading h3 {
+  margin: 0;
+}
+
+.project-highlight p {
+  line-height: 1.75;
+}
+
+.project-highlight-tech {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.project-highlight-link,
+.all-projects-link {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-top: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+  padding-bottom: 0.3rem;
+  transition: opacity 0.2s ease;
+}
+
+.project-highlight-link:hover,
+.all-projects-link:hover {
+  opacity: 0.65;
+}
+
+.all-projects-link {
+  margin-top: 1.75rem;
+}
+
+.skills-growth > p {
+  max-width: 800px;
+  line-height: 1.85;
+  margin-top: 1.25rem;
+}
+
+
+@media (max-width: 768px) {
+  .project-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-projects,
+  .skills-growth {
+    margin-top: 3.5rem;
+  }
+}
+
+.project-highlight-meta {
+  font-size: 0.8rem;
+  opacity: 0.65;
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  letter-spacing: 0.02em;
+}
+
+.project-highlight-meta span {
+  margin: 0 0.25rem;
+}
