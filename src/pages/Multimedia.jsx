@@ -313,7 +313,7 @@ function Multimedia() {
                   Catherine Cowles
                 </span>
                 <p className="recommendation-description">
-                  This small-town romantic suspense novel stood out to me because of its high-stakes mystery and
+                  This small town romantic suspense novel stood out to me because of its high stakes mystery and
                   unexpected twists. I enjoyed how the suspense kept the story engaging while the romance added
                   another layer to the characters and their relationships.
                 </p>
@@ -327,7 +327,7 @@ function Multimedia() {
                   Devney Perry
                 </span>
                 <p className="recommendation-description">
-                  I enjoyed this small-town romance for its family dynamics. The themes of healing and the main
+                  I enjoyed this small town romance for its family dynamics. The themes of healing and the main
                   female character's journey as she raises her newborn baby were particularly heartwarming.
                   I liked how the story balanced romance with personal growth and family connections.
                 </p>

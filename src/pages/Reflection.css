@@ -343,3 +343,15 @@
     padding: 22px 20px;
   }
 }
+
+@media (max-width: 600px) {
+  .reflection-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  .reflection-title span {
+    display: block;
+  }
+}

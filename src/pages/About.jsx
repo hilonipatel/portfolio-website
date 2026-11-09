@@ -93,7 +93,7 @@ const featuredCourses = [
     number: "01:198:439",
     name: "Introduction to Data Science",
     theme: "Finding useful insights in data",
-    description: "In this course, I explored different stages of working with data, from collecting and preparing it to visualizing information and using techniques such as machine learning and data mining. It helped me see how programming can be used to answer questions and uncover patterns, rather than only build traditional applications. The course also sparked my interest in how data-driven features and AI can be incorporated into useful software.",
+    description: "In this course, I explored different stages of working with data, from collecting and preparing it to visualizing information and using techniques such as machine learning and data mining. It helped me see how programming can be used to answer questions and uncover patterns, rather than only build traditional applications. The course also sparked my interest in how data driven features and AI can be incorporated into useful software.",
     challenge:
       "Working with data involves more than applying a technique or producing a visualization. Understanding the data, preparing it appropriately, and interpreting results are all important parts of the process. This course encouraged me to think more carefully about how data can be transformed into meaningful information and helped me become more comfortable approaching problems analytically.",
     tags: ["Data Analysis", "Visualization", "Machine Learning"],
@@ -192,7 +192,7 @@ function About() {
                   of Information and Data Management course to a
                   practical application. Developing a reservation
                   system helped me understand how database design,
-                  backend logic, and user-facing functionality work
+                  backend logic, and user facing functionality work
                   together.
                 </p>
   
@@ -200,7 +200,7 @@ function About() {
                   I especially enjoyed working with relational
                   databases and developing features such as flight
                   search, reservations, cancellations, and
-                  role-specific workflows. The project challenged
+                  role specific workflows. The project challenged
                   me to think about how different users interact
                   with a system and how the underlying data must
                   remain organized and consistent.
@@ -240,7 +240,7 @@ function About() {
                   The FlightSystem customer home page allows users to search for
                   flights by entering their departure and arrival locations,
                   departure date, and boarding class. This screenshot highlights
-                  the customer-facing functionality I helped develop and the way
+                  the customer facing functionality I helped develop and the way
                   database information supports the flight-search experience.
                 </p>
               </div>
